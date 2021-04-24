@@ -10,3 +10,6 @@
 
 ## 算法练习
 1. [不借助任何其他数据结构,使用递归来完成一个栈的逆序操作](https://github.com/BruceLql/note/blob/main/demo/src/main/java/com/bruce/note/StackReverse.java)
+
+## 设计模式
+1.[Observer Pattern](https://github.com/BruceLql/note/blob/main/DesignPatternDemo/src/main/java/com/bruce/patterns/observer/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F.md)

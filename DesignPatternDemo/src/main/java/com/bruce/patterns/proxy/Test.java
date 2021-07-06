@@ -1,5 +1,7 @@
 package com.bruce.patterns.proxy;
 
+import java.lang.reflect.Proxy;
+
 /**
  * @author 李启岚(起冉)
  */
@@ -21,6 +23,17 @@ public class Test {
         BuyHouse buyHouse = new BuyHouseImpl();
         BuyHouse buyHouse21 = new BuyHouse2Impl(buyHouse);
         buyHouse21.buyHosue();
+
+        // jdk 动态代理
+        BuyHouse buyHouse1 = new BuyHouseImpl();
+        BuyHouse proxyBuyHouse = (BuyHouse) Proxy.newProxyInstance(BuyHouse.class.getClassLoader(), new
+                Class[]{BuyHouse.class}, new DynamicProxyHandler(buyHouse1));
+        proxyBuyHouse.buyHosue();
+        // cglib 动态代理
+        BuyHouse buyHouse2 = new BuyHouseImpl();
+        CglibProxy cglibProxy = new CglibProxy();
+        BuyHouseImpl buyHouseCglibProxy = (BuyHouseImpl) cglibProxy.getInstance(buyHouse2);
+        buyHouseCglibProxy.buyHosue();
 
     }
 
